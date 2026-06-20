@@ -198,8 +198,8 @@
     <div class="tab-row">
       <div class="tab-card active" onclick="switchTab('food', this)">
         <div class="tab-thumb">
-          <img src="images/food-1.jpg" alt="料理写真1">
-          <img src="images/food-6.jpg" alt="料理写真2">
+          <img src="image/food-1.jpg" alt="料理写真1">
+          <img src="image/food-6.jpg" alt="料理写真2">
         </div>
         <div class="tab-label">
           <div class="tab-name">商品・フード</div>
@@ -209,8 +209,8 @@
       </div>
       <div class="tab-card" onclick="switchTab('arch', this)">
         <div class="tab-thumb">
-          <img src="images/arch-1.jpg" alt="建築写真1">
-          <img src="images/arch-2.jpg" alt="建築写真2">
+          <img src="image/arch-1.jpg" alt="建築写真1">
+          <img src="image/arch-2.jpg" alt="建築写真2">
         </div>
         <div class="tab-label">
           <div class="tab-name">建築・空間</div>
@@ -220,8 +220,8 @@
       </div>
       <div class="tab-card" onclick="switchTab('beauty', this)">
         <div class="tab-thumb">
-          <img src="images/beauty-3.jpg" alt="ビューティー写真1">
-          <img src="images/beauty-2.jpg" alt="ビューティー写真2">
+          <img src="image/beauty-3.jpg" alt="ビューティー写真1">
+          <img src="image/beauty-2.jpg" alt="ビューティー写真2">
         </div>
         <div class="tab-label">
           <div class="tab-name">ビューティー</div>
@@ -234,18 +234,18 @@
     <!-- 商品・フード -->
     <div id="panel-food" class="tab-panel active">
       <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
-        <img id="main-food-img" src="images/food-1.jpg" alt="刺身の盛り合わせ">
+        <img id="main-food-img" src="image/food-1.jpg" alt="刺身の盛り合わせ">
         <div class="zoom-hint">タップで拡大</div>
       </div>
       <div class="thumb-grid">
-        <div class="thumb active" onclick="selectThumb('food', this, 'images/food-1.jpg', '刺身の盛り合わせ')"><img src="images/food-1.jpg" alt="刺身の盛り合わせ"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-2.jpg', 'つけ麺')"><img src="images/food-2.jpg" alt="つけ麺"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-3.jpg', '野菜・貝の盛り合わせ')"><img src="images/food-3.jpg" alt="野菜・貝の盛り合わせ"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-4.jpg', 'コース料理')"><img src="images/food-4.jpg" alt="コース料理"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-5.jpg', 'サテー')"><img src="images/food-5.jpg" alt="サテー"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-6.jpg', 'ワイン')"><img src="images/food-6.jpg" alt="ワイン"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-7.jpg', 'チキンのロースト')"><img src="images/food-7.jpg" alt="チキンのロースト"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'images/food-8.jpg', '焼き鳥')"><img src="images/food-8.jpg" alt="焼き鳥"></div>
+        <div class="thumb active" onclick="selectThumb('food', this, 'image/food-1.jpg', '刺身の盛り合わせ')"><img src="image/food-1.jpg" alt="刺身の盛り合わせ"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-2.jpg', 'つけ麺')"><img src="image/food-2.jpg" alt="つけ麺"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-3.jpg', '野菜・貝の盛り合わせ')"><img src="image/food-3.jpg" alt="野菜・貝の盛り合わせ"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-4.jpg', 'コース料理')"><img src="image/food-4.jpg" alt="コース料理"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-5.jpg', 'サテー')"><img src="image/food-5.jpg" alt="サテー"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-6.jpg', 'ワイン')"><img src="image/food-6.jpg" alt="ワイン"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-7.jpg', 'チキンのロースト')"><img src="image/food-7.jpg" alt="チキンのロースト"></div>
+        <div class="thumb" onclick="selectThumb('food', this, 'image/food-8.jpg', '焼き鳥')"><img src="image/food-8.jpg" alt="焼き鳥"></div>
       </div>
       <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
     </div>
@@ -253,12 +253,12 @@
     <!-- 建築・空間 -->
     <div id="panel-arch" class="tab-panel">
       <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
-        <img id="main-arch-img" src="images/arch-1.jpg" alt="カフェ内装">
+        <img id="main-arch-img" src="image/arch-1.jpg" alt="カフェ内装">
         <div class="zoom-hint">タップで拡大</div>
       </div>
       <div class="thumb-grid">
-        <div class="thumb active" onclick="selectThumb('arch', this, 'images/arch-1.jpg', 'カフェ内装')"><img src="images/arch-1.jpg" alt="カフェ内装"></div>
-        <div class="thumb" onclick="selectThumb('arch', this, 'images/arch-2.jpg', 'クリニック受付')"><img src="images/arch-2.jpg" alt="クリニック受付"></div>
+        <div class="thumb active" onclick="selectThumb('arch', this, 'image/arch-1.jpg', 'カフェ内装')"><img src="image/arch-1.jpg" alt="カフェ内装"></div>
+        <div class="thumb" onclick="selectThumb('arch', this, 'image/arch-2.jpg', 'クリニック受付')"><img src="image/arch-2.jpg" alt="クリニック受付"></div>
       </div>
       <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
     </div>
@@ -266,14 +266,14 @@
     <!-- ビューティー -->
     <div id="panel-beauty" class="tab-panel">
       <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
-        <img id="main-beauty-img" src="images/beauty-1.jpg" alt="施術室">
+        <img id="main-beauty-img" src="image/beauty-1.jpg" alt="施術室">
         <div class="zoom-hint">タップで拡大</div>
       </div>
       <div class="thumb-grid">
-        <div class="thumb active" onclick="selectThumb('beauty', this, 'images/beauty-1.jpg', '施術室')"><img src="images/beauty-1.jpg" alt="施術室"></div>
-        <div class="thumb" onclick="selectThumb('beauty', this, 'images/beauty-2.jpg', 'マッサージ施術')"><img src="images/beauty-2.jpg" alt="マッサージ施術"></div>
-        <div class="thumb" onclick="selectThumb('beauty', this, 'images/beauty-3.jpg', 'ネイル')"><img src="images/beauty-3.jpg" alt="ネイル"></div>
-        <div class="thumb" onclick="selectThumb('beauty', this, 'images/beauty-4.jpg', 'エステ施術')"><img src="images/beauty-4.jpg" alt="エステ施術"></div>
+        <div class="thumb active" onclick="selectThumb('beauty', this, 'image/beauty-1.jpg', '施術室')"><img src="image/beauty-1.jpg" alt="施術室"></div>
+        <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-2.jpg', 'マッサージ施術')"><img src="image/beauty-2.jpg" alt="マッサージ施術"></div>
+        <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-3.jpg', 'ネイル')"><img src="image/beauty-3.jpg" alt="ネイル"></div>
+        <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-4.jpg', 'エステ施術')"><img src="image/beauty-4.jpg" alt="エステ施術"></div>
       </div>
       <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
     </div>
@@ -314,7 +314,7 @@
     <div class="section-label">About</div>
     <div class="about-grid">
       <div class="about-photo">
-        <img src="images/profile.jpg" alt="原優人 プロフィール写真">
+        <img src="image/profile.jpg" alt="原優人 プロフィール写真">
       </div>
       <div class="about-text">
         <p>広報担当がいても、写真は本業じゃないことがあります。スマホで撮影してそのまま公開——それで損をしている会社が、大阪にはたくさんあります。</p>

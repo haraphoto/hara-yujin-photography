@@ -29,6 +29,7 @@
   img { display: block; max-width: 100%; }
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
 
+  /* Nav */
   header {
     position: sticky; top: 0;
     background: rgba(255,255,255,0.92);
@@ -41,25 +42,31 @@
   .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--gray-700); }
   .nav-links a:hover { color: var(--black); }
 
+  /* Hero */
   .hero { background: var(--black); color: var(--white); padding: 80px 0 64px; }
   .hero-q { font-size: 15px; color: var(--gray-500); margin-bottom: 20px; }
   .hero h1 { font-size: clamp(30px, 6vw, 48px); font-weight: 600; line-height: 1.5; margin-bottom: 20px; }
   .hero-sub { font-size: 15px; color: var(--gray-300); }
 
+  /* Sections */
   section { padding: 56px 0; border-bottom: 1px solid var(--line); }
   .section-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 24px; }
 
+  /* Concept */
   .concept-text { font-size: 16px; color: var(--ink); margin-bottom: 32px; line-height: 2; }
   .concept-text strong { display: block; font-size: 17px; margin-bottom: 6px; }
 
-  .tab-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  /* Tabs */
+  .tab-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
   .tab-card {
-    border: 1px solid var(--line); border-radius: var(--radius);
+    border: 1.5px solid #999;
+    border-radius: var(--radius);
     overflow: hidden; cursor: pointer;
-    transition: border-color 0.15s, transform 0.15s; background: var(--white);
+    transition: border-color 0.15s, transform 0.15s;
+    background: var(--white);
   }
-  .tab-card:hover { transform: translateY(-2px); border-color: var(--gray-300); }
-  .tab-card.active { border: 2px solid var(--ink); }
+  .tab-card:hover { transform: translateY(-2px); border-color: var(--gray-700); }
+  .tab-card.active { border: 3px solid var(--ink); }
   .tab-thumb {
     aspect-ratio: 4/3; background: var(--gray-100);
     display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden;
@@ -70,14 +77,16 @@
   .tab-sub { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
   .tab-link { font-size: 11px; color: var(--accent); margin-top: 4px; }
 
+  /* Panel */
   .tab-panel { display: none; }
   .tab-panel.active { display: block; animation: fadein 0.2s ease; }
   @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
+  /* Main image */
   .main-img-wrap {
     width: 100%; background: var(--gray-100);
     border-radius: var(--radius); overflow: hidden;
-    margin-bottom: 10px; cursor: zoom-in; position: relative;
+    margin-bottom: 24px; cursor: zoom-in; position: relative;
   }
   .main-img-wrap img { width: 100%; height: auto; display: block; }
   .zoom-hint {
@@ -86,16 +95,29 @@
     font-size: 11px; padding: 4px 10px; border-radius: 20px; pointer-events: none;
   }
 
+  /* Thumb grid */
+  .thumb-area {
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    padding: 12px;
+  }
   .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .thumb {
-    aspect-ratio: 1; border-radius: 4px; background: var(--gray-100);
+    aspect-ratio: 1; border-radius: 4px; background: var(--white);
     overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.1s;
   }
   .thumb.active { border-color: var(--ink); }
   .thumb img { width: 100%; height: 100%; object-fit: cover; }
 
-  .gallery-note { margin-top: 14px; font-size: 12px; color: var(--gray-500); }
+  .gallery-note { margin-top: 12px; font-size: 12px; color: var(--gray-500); padding: 0 2px; }
 
+  .empty-msg {
+    font-size: 15px; color: var(--gray-500);
+    padding: 48px 0; text-align: center;
+    border: 1px dashed var(--line); border-radius: var(--radius);
+  }
+
+  /* Modal */
   .modal-overlay {
     display: none; position: fixed; inset: 0;
     background: rgba(0,0,0,0.92); z-index: 999;
@@ -109,28 +131,33 @@
   }
   .modal-img {
     max-width: 100%; max-height: 100%; object-fit: contain; display: block;
-    transform-origin: center center; transition: transform 0.1s ease;
+    transform-origin: center center;
     touch-action: none; user-select: none; -webkit-user-select: none;
+    cursor: zoom-in;
   }
+  .modal-img.zoomed { cursor: grab; }
+  .modal-img.zoomed:active { cursor: grabbing; }
   .modal-close {
     position: fixed; top: 16px; right: 16px;
     background: rgba(255,255,255,0.15); color: #fff; border: none;
     border-radius: 50%; width: 44px; height: 44px; font-size: 22px;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    z-index: 1000;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000;
   }
   .modal-close:hover { background: rgba(255,255,255,0.3); }
   .modal-hint {
     position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
     color: rgba(255,255,255,0.5); font-size: 12px; pointer-events: none;
+    white-space: nowrap;
   }
 
+  /* Services */
   .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .service-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
   .service-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
   .service-desc { font-size: 14px; color: var(--gray-700); margin-bottom: 12px; line-height: 1.7; }
   .service-price { font-size: 15px; font-weight: 600; color: var(--accent); }
 
+  /* About */
   .about-grid { display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: start; }
   .about-photo { width: 100%; aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; background: var(--gray-100); }
   .about-photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -139,6 +166,7 @@
   .about-meta div { border-left: 2px solid var(--line); padding-left: 10px; }
   .about-meta strong { display: block; color: var(--ink); font-weight: 600; font-size: 14px; margin-bottom: 2px; }
 
+  /* Contact */
   .contact-box { background: var(--gray-100); border-radius: var(--radius); padding: 40px; text-align: center; }
   .contact-box p { font-size: 16px; color: var(--gray-700); margin-bottom: 24px; }
   .contact-btn {
@@ -148,12 +176,23 @@
 
   footer { padding: 28px 0; text-align: center; font-size: 13px; color: var(--gray-500); }
 
+  /* PC: max-height for main image, double-click zoom */
+  @media (min-width: 721px) {
+    .main-img-wrap { max-height: 70vh; }
+    .main-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .zoom-hint::before { content: "クリックで拡大"; }
+    .zoom-hint-text { display: none; }
+  }
+
+  /* Mobile: max-height 60vw */
   @media (max-width: 720px) {
     .nav-links { display: none; }
     .about-grid { grid-template-columns: 1fr; }
     .about-photo { width: 120px; }
     .service-grid { grid-template-columns: 1fr; }
     .contact-box { padding: 28px 20px; }
+    .main-img-wrap { max-height: 60vw; }
+    .main-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
   }
   @media (max-width: 480px) {
     .tab-name { font-size: 11px; }
@@ -235,47 +274,53 @@
     <div id="panel-food" class="tab-panel active">
       <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
         <img id="main-food-img" src="image/food-1.jpg" alt="刺身の盛り合わせ">
-        <div class="zoom-hint">タップで拡大</div>
+        <div class="zoom-hint"><span class="zoom-hint-text">タップで拡大</span></div>
       </div>
-      <div class="thumb-grid">
-        <div class="thumb active" onclick="selectThumb('food', this, 'image/food-1.jpg', '刺身の盛り合わせ')"><img src="image/food-1.jpg" alt="刺身の盛り合わせ"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-2.jpg', 'つけ麺')"><img src="image/food-2.jpg" alt="つけ麺"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-3.jpg', '野菜・貝の盛り合わせ')"><img src="image/food-3.jpg" alt="野菜・貝の盛り合わせ"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-4.jpg', 'コース料理')"><img src="image/food-4.jpg" alt="コース料理"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-5.jpg', 'サテー')"><img src="image/food-5.jpg" alt="サテー"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-6.jpg', 'ワイン')"><img src="image/food-6.jpg" alt="ワイン"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-7.jpg', 'チキンのロースト')"><img src="image/food-7.jpg" alt="チキンのロースト"></div>
-        <div class="thumb" onclick="selectThumb('food', this, 'image/food-8.jpg', '焼き鳥')"><img src="image/food-8.jpg" alt="焼き鳥"></div>
+      <div class="thumb-area">
+        <div class="thumb-grid">
+          <div class="thumb active" onclick="selectThumb('food', this, 'image/food-1.jpg', '刺身の盛り合わせ')"><img src="image/food-1.jpg" alt="刺身の盛り合わせ"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-2.jpg', 'つけ麺')"><img src="image/food-2.jpg" alt="つけ麺"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-3.jpg', '野菜・貝の盛り合わせ')"><img src="image/food-3.jpg" alt="野菜・貝の盛り合わせ"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-4.jpg', 'コース料理')"><img src="image/food-4.jpg" alt="コース料理"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-5.jpg', 'サテー')"><img src="image/food-5.jpg" alt="サテー"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-6.jpg', 'ワイン')"><img src="image/food-6.jpg" alt="ワイン"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-7.jpg', 'チキンのロースト')"><img src="image/food-7.jpg" alt="チキンのロースト"></div>
+          <div class="thumb" onclick="selectThumb('food', this, 'image/food-8.jpg', '焼き鳥')"><img src="image/food-8.jpg" alt="焼き鳥"></div>
+        </div>
+        <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
       </div>
-      <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
     </div>
 
     <!-- 建築・空間 -->
     <div id="panel-arch" class="tab-panel">
       <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
         <img id="main-arch-img" src="image/arch-1.jpg" alt="カフェ内装">
-        <div class="zoom-hint">タップで拡大</div>
+        <div class="zoom-hint"><span class="zoom-hint-text">タップで拡大</span></div>
       </div>
-      <div class="thumb-grid">
-        <div class="thumb active" onclick="selectThumb('arch', this, 'image/arch-1.jpg', 'カフェ内装')"><img src="image/arch-1.jpg" alt="カフェ内装"></div>
-        <div class="thumb" onclick="selectThumb('arch', this, 'image/arch-2.jpg', 'クリニック受付')"><img src="image/arch-2.jpg" alt="クリニック受付"></div>
+      <div class="thumb-area">
+        <div class="thumb-grid">
+          <div class="thumb active" onclick="selectThumb('arch', this, 'image/arch-1.jpg', 'カフェ内装')"><img src="image/arch-1.jpg" alt="カフェ内装"></div>
+          <div class="thumb" onclick="selectThumb('arch', this, 'image/arch-2.jpg', 'クリニック受付')"><img src="image/arch-2.jpg" alt="クリニック受付"></div>
+        </div>
+        <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
       </div>
-      <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
     </div>
 
     <!-- ビューティー -->
     <div id="panel-beauty" class="tab-panel">
       <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
         <img id="main-beauty-img" src="image/beauty-1.jpg" alt="施術室">
-        <div class="zoom-hint">タップで拡大</div>
+        <div class="zoom-hint"><span class="zoom-hint-text">タップで拡大</span></div>
       </div>
-      <div class="thumb-grid">
-        <div class="thumb active" onclick="selectThumb('beauty', this, 'image/beauty-1.jpg', '施術室')"><img src="image/beauty-1.jpg" alt="施術室"></div>
-        <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-2.jpg', 'マッサージ施術')"><img src="image/beauty-2.jpg" alt="マッサージ施術"></div>
-        <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-3.jpg', 'ネイル')"><img src="image/beauty-3.jpg" alt="ネイル"></div>
-        <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-4.jpg', 'エステ施術')"><img src="image/beauty-4.jpg" alt="エステ施術"></div>
+      <div class="thumb-area">
+        <div class="thumb-grid">
+          <div class="thumb active" onclick="selectThumb('beauty', this, 'image/beauty-1.jpg', '施術室')"><img src="image/beauty-1.jpg" alt="施術室"></div>
+          <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-2.jpg', 'マッサージ施術')"><img src="image/beauty-2.jpg" alt="マッサージ施術"></div>
+          <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-3.jpg', 'ネイル')"><img src="image/beauty-3.jpg" alt="ネイル"></div>
+          <div class="thumb" onclick="selectThumb('beauty', this, 'image/beauty-4.jpg', 'エステ施術')"><img src="image/beauty-4.jpg" alt="エステ施術"></div>
+        </div>
+        <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
       </div>
-      <div class="gallery-note">※掲載写真には過去案件の作品例を含みます。</div>
     </div>
 
   </div>
@@ -344,15 +389,17 @@
   <div class="wrap">© 2026 Hara Yujin Photography — 大阪府</div>
 </footer>
 
+<!-- Modal -->
 <div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
   <button class="modal-close" onclick="closeModal(event)">✕</button>
   <div class="modal-inner" id="modalInner">
     <img class="modal-img" id="modalImg" src="" alt="">
   </div>
-  <div class="modal-hint">ピンチで拡大 / 背景タップで閉じる</div>
+  <div class="modal-hint" id="modalHint">ピンチで拡大 / 背景タップで閉じる</div>
 </div>
 
 <script>
+  /* --- Tab / Thumb --- */
   function switchTab(key, el) {
     document.querySelectorAll('.tab-card').forEach(function(c) { c.classList.remove('active'); });
     document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
@@ -368,12 +415,20 @@
     if (mainImg) { mainImg.src = src; mainImg.alt = alt; }
   }
 
+  /* --- Modal --- */
   var modalScale = 1, lastDist = 0, translateX = 0, translateY = 0;
   var isDragging = false, dragStartX = 0, dragStartY = 0;
+  var isPC = window.matchMedia('(min-width: 721px)').matches;
+
+  // PC hint
+  if (isPC) {
+    document.getElementById('modalHint').textContent = 'ダブルクリックで拡大 / ドラッグで移動 / クリックで閉じる';
+  }
 
   function openModal(src, alt) {
     var img = document.getElementById('modalImg');
     img.src = src; img.alt = alt || '';
+    img.classList.remove('zoomed');
     document.getElementById('modal').classList.add('open');
     document.body.style.overflow = 'hidden';
     resetTransform();
@@ -393,7 +448,9 @@
   }
 
   function resetTransform() {
-    modalScale = 1; translateX = 0; translateY = 0; applyTransform();
+    modalScale = 1; translateX = 0; translateY = 0;
+    applyTransform();
+    document.getElementById('modalImg').classList.remove('zoomed');
   }
 
   function applyTransform() {
@@ -401,6 +458,34 @@
       'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + modalScale + ')';
   }
 
+  /* PC: double-click zoom 1x -> 2x -> 4x -> 1x */
+  document.getElementById('modalImg').addEventListener('dblclick', function(e) {
+    if (!isPC) return;
+    if (modalScale < 2) { modalScale = 2; }
+    else if (modalScale < 4) { modalScale = 4; }
+    else { modalScale = 1; translateX = 0; translateY = 0; }
+    applyTransform();
+    this.classList.toggle('zoomed', modalScale > 1);
+  });
+
+  /* PC: drag */
+  var pcDragging = false, pcDragStartX = 0, pcDragStartY = 0, pcTX = 0, pcTY = 0;
+  document.getElementById('modalImg').addEventListener('mousedown', function(e) {
+    if (!isPC || modalScale <= 1) return;
+    pcDragging = true;
+    pcDragStartX = e.clientX - translateX;
+    pcDragStartY = e.clientY - translateY;
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (!pcDragging) return;
+    translateX = e.clientX - pcDragStartX;
+    translateY = e.clientY - pcDragStartY;
+    applyTransform();
+  });
+  document.addEventListener('mouseup', function() { pcDragging = false; });
+
+  /* Mobile: pinch zoom + drag */
   var mi = document.getElementById('modalImg');
   mi.addEventListener('touchstart', function(e) {
     if (e.touches.length === 2) {
@@ -429,12 +514,6 @@
     lastDist = 0; isDragging = false;
     if (modalScale < 1.05) resetTransform();
   }, { passive: true });
-
-  document.getElementById('modalInner').addEventListener('wheel', function(e) {
-    e.preventDefault();
-    modalScale = Math.min(Math.max(modalScale - e.deltaY * 0.001, 1), 5);
-    applyTransform();
-  }, { passive: false });
 
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 </script>

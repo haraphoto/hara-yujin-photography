@@ -49,15 +49,15 @@
   .hero-sub { font-size: 15px; color: var(--gray-300); }
 
   /* Sections */
-  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
   .section-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 24px; }
 
   /* Concept */
-  .concept-text { font-size: 16px; color: var(--ink); margin-bottom: 32px; line-height: 2; }
+  .concept-text { font-size: 16px; color: var(--ink); margin-bottom: 48px; line-height: 2; }
   .concept-text strong { display: block; font-size: 17px; margin-bottom: 6px; }
 
   /* Tabs */
-  .tab-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+  .tab-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 36px; }
   .tab-card {
     border: 1.5px solid #999;
     border-radius: var(--radius);
@@ -99,7 +99,7 @@
   .thumb-area {
     background: var(--gray-100);
     border-radius: var(--radius);
-    padding: 12px;
+    padding: 16px;
   }
   .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .thumb {
@@ -151,11 +151,14 @@
   }
 
   /* Services */
-  .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .service-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
-  .service-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-  .service-desc { font-size: 14px; color: var(--gray-700); margin-bottom: 12px; line-height: 1.7; }
-  .service-price { font-size: 15px; font-weight: 600; color: var(--accent); }
+  .service-table { width: 100%; border-collapse: collapse; }
+  .service-table tr { border-bottom: 1px solid var(--line); }
+  .service-table tr:first-child { border-top: 1px solid var(--line); }
+  .service-table td { padding: 14px 4px; font-size: 14px; vertical-align: top; }
+  .service-table td:first-child { font-weight: 600; color: var(--ink); width: 45%; }
+  .service-table td:last-child { color: var(--accent); font-weight: 600; text-align: right; }
+  .service-note { display: block; font-size: 12px; color: var(--gray-500); font-weight: 400; margin-top: 3px; }
+  .service-common { margin-top: 20px; padding: 14px 16px; background: var(--gray-100); border-radius: var(--radius); font-size: 13px; color: var(--gray-700); line-height: 2; }
 
   /* About */
   .about-grid { display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: start; }
@@ -189,7 +192,6 @@
     .nav-links { display: none; }
     .about-grid { grid-template-columns: 1fr; }
     .about-photo { width: 120px; }
-    .service-grid { grid-template-columns: 1fr; }
     .contact-box { padding: 28px 20px; }
     .main-img-wrap { max-height: 60vw; overflow: hidden; }
     .main-img-wrap img { width: auto; height: auto; max-width: 100%; max-height: 60vw; margin: 0 auto; }
@@ -329,27 +331,31 @@
 <section id="services">
   <div class="wrap">
     <div class="section-label">Services &amp; Pricing</div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-title">商品・フード撮影</div>
-        <div class="service-desc">白背景〜スタイリング撮影まで対応。EC・カタログ・メニュー向け。</div>
-        <div class="service-price">¥3,000〜 / 1カット</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">建築・空間撮影</div>
-        <div class="service-desc">レストラン・店舗・施設の内外装。PR素材・竣工写真向け。</div>
-        <div class="service-price">¥30,000〜 / 半日</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">ビューティー・施術撮影</div>
-        <div class="service-desc">エステ・スパの施術工程や院内環境。HP・広告素材向け。</div>
-        <div class="service-price">¥20,000〜 / 半日</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">広報写真サポート</div>
-        <div class="service-desc">SNS・社内報・採用ページなど継続的な撮影をまとめて依頼。</div>
-        <div class="service-price">要お見積もり</div>
-      </div>
+    <table class="service-table">
+      <tr>
+        <td>商品・フード撮影<span class="service-note">¥2,000/カット（最低5カット）との<br>いずれか高い方を適用</span></td>
+        <td>¥4,000〜/時間<span class="service-note">最低2時間</span></td>
+      </tr>
+      <tr>
+        <td>建築・空間撮影</td>
+        <td>¥4,000〜/時間<span class="service-note">最低2時間</span></td>
+      </tr>
+      <tr>
+        <td>ビューティー撮影</td>
+        <td>¥4,000〜/時間<span class="service-note">最低2時間</span></td>
+      </tr>
+      <tr>
+        <td>ビューティー（モデルプラン）<span class="service-note">モデル・スタッフ撮影を含むプラン</span></td>
+        <td>¥20,000〜<span class="service-note">内容によりお見積もり</span></td>
+      </tr>
+      <tr>
+        <td>人物撮影加算<span class="service-note">上記プランに人物撮影が加わる場合</span></td>
+        <td>¥3,000〜/時間<span class="service-note">追加</span></td>
+      </tr>
+    </table>
+    <div class="service-common">
+      交通費：公共交通機関の実費をご請求します<br>
+      編集（ホワイトバランス・露出調整）込み
     </div>
   </div>
 </section>
@@ -443,7 +449,7 @@
 
   function handleOverlayClick(e) {
     if (e.target === document.getElementById('modal') || e.target === document.getElementById('modalInner')) {
-      if (modalScale <= 1) closeModal();
+      closeModal();
     }
   }
 

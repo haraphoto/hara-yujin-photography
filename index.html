@@ -342,10 +342,18 @@
       </div>
     </div>
    <!-- other -->
-    <!-- Other -->
-    <div id="panel-other" class="tab-panel">
-     <div class="empty-msg">
-      作品を準備中です。
+   <div id="panel-other" class="tab-panel">
+     <div class="main-img-wrap" onclick="openModal(this.querySelector('img').src, this.querySelector('img').alt)">
+     <img id="main-other-img" src="image/other-1.jpg" alt="Other 1">
+     <div class="zoom-hint"><span class="zoom-hint-text">タップで拡大</span></div>
+   </div>
+   <div class="thumb-area">
+     <div class="thumb-grid">
+       <div class="thumb active" onclick="selectThumb('other', this, 'image/other-1.jpg', 'Other 1')"><img src="image/other-1.jpg" alt="Other 1"></div>
+       <div class="thumb" onclick="selectThumb('other', this, 'image/other-2.jpg', 'Other 2')"><img src="image/other-2.jpg" alt="Other 2"></div>
+       <div class="thumb" onclick="selectThumb('other', this, 'image/other-3.jpg', 'Other 3')"><img src="image/other-3.jpg" alt="Other 3"></div>
+       <div class="thumb" onclick="selectThumb('other', this, 'image/other-4.jpg', 'Other 4')"><img src="image/other-4.jpg" alt="Other 4"></div>
+       <div class="thumb" onclick="selectThumb('other', this, 'image/other-5.jpg', 'Other 5')"><img src="image/other-5.jpg" alt="Other 5"></div>
      </div>
     </div>
   </div>
